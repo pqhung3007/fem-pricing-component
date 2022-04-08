@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+
+body {
+  background-color: #f6f6fe;
+  color: #494c5f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  background-image: url("images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  background-image: url("images/bg-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.container {
+  max-width: 100%;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-container p {
+  margin: 0 1rem;
+}
+
+label {
+  cursor: pointer;
+  width: 4rem;
+  height: 1.8rem;
+  border-radius: 100px;
+  position: relative;
+  align-self: center;
+  background: #8b8bf5;
+}
+
+label:after {
+  position: absolute;
+  content: "";
+  top: 3px;
+  right: 3px;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input:checked + label {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+input:checked + label:after {
+  right: calc(100% - 48px);
+  transform: translateX(-100%);
+}
+
+.price-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: hsl(233, 13%, 49%);
+  padding: 2rem;
+  margin: 3rem;
+}
+
+.price-box.price-box-pro {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: #fff;
+}
+
+.price {
+  margin: 1rem;
+}
+
+.price-box h4 {
+  margin: 0;
+}
+
+.price-box p {
+  color: hsl(232, 13%, 33%);
+  font-size: 4em;
+  margin: 1rem;
+}
+
+.price-box.price-box-pro p {
+  color: #fff;
+}
+
+.price-box span.monthly {
+  display: none;
+}
+
+.convert span.monthly {
+  display: block;
+}
+
+.convert span.annually {
+  display: none;
+}
+
+.price-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.price-box ul li:first-of-type {
+  border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+.price-box ul li {
+  border-bottom: 1px solid hsl(234, 14%, 74%);
+  padding: 1rem;
+}
+
+.cta-button {
+  font-family: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 1.6rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.price-box.price-box-pro .cta-button {
+  background: #fff;
+  color: #8b8bf5;
+}
+
+.attribution a {
+  color: #8b8bf5;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .price-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .price-box {
+    margin: 5rem 0;
+  }
+
+  .price-box.price-box-pro {
+    transform: scale(1.1);
+  }
+}
